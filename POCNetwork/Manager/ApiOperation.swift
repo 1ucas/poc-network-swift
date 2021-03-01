@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ApiOperation: Operation {
+class ApiOperation: AsynchronousOperation {
     
     private let page:Int
     private let apiProvider: ApiClient
@@ -20,6 +20,7 @@ class ApiOperation: Operation {
     }
     
     override func main() {
+        super.main()
         apiProvider.listBreweries(withPage: page) { [self] response in
             NSLog("Operation - Brew - Done")
             
@@ -29,6 +30,7 @@ class ApiOperation: Operation {
             } catch {
                 self.completion(.failure(error))
             }
+            finish()
         }
     }
     

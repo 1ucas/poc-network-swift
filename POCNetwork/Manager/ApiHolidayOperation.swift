@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ApiHolidayOperation: Operation {
+class ApiHolidayOperation: AsynchronousOperation {
     
     private let apiProvider: ApiClient
     private let completion: FetchHolidaysCompletion
@@ -18,6 +18,7 @@ class ApiHolidayOperation: Operation {
     }
     
     override func main() {
+        super.main()
         apiProvider.listHolidays { [self] response in
             NSLog("Operation - Holiday - Done")
             
@@ -27,6 +28,7 @@ class ApiHolidayOperation: Operation {
             } catch {
                 self.completion(.failure(error))
             }
+            finish()
         }
     }
     

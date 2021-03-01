@@ -47,15 +47,16 @@ class ViewController: UIViewController {
 
     @IBAction func iniciarTesteOperation(_ sender: UIButton) {
         startOperation = DispatchTime.now()
-        //chamarOperation(selectedPage: 1)
+        chamarOperation(selectedPage: 1)
     }
     
     @IBAction func iniciarTesteDireto(_ sender: Any) {
         startDireto = DispatchTime.now()
-        //chamarDireto(selectedPage: 1)
+        chamarDireto(selectedPage: 1)
     }
     
     @IBAction func iniciarTesteCompleto(_ sender: UIButton) {
+        // FIXME: Leva em consideração tempo de enfileiramento dos dois lados
         startOperation = DispatchTime.now()
         chamarOperation(selectedPage: 1)
         

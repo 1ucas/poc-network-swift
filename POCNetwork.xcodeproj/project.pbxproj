@@ -22,6 +22,7 @@
 		C10C3BC525D6E9BA0097031A /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C3BC425D6E9BA0097031A /* ApiClient.swift */; };
 		C10C3BC925D6EB050097031A /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C3BC825D6EB050097031A /* ApiRequest.swift */; };
 		C10C3BCC25D6EB0E0097031A /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C3BCB25D6EB0E0097031A /* ApiResponse.swift */; };
+		C11737DA25EC9AA3001964B4 /* AsynchronousOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11737D925EC9AA3001964B4 /* AsynchronousOperation.swift */; };
 		C122D23425DEB02C007C50D0 /* ApiRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C122D23325DEB02C007C50D0 /* ApiRepositoryMock.swift */; };
 		C1500B5725DE9E5200A3D356 /* ApiServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1500B5625DE9E5200A3D356 /* ApiServiceTests.swift */; };
 		C1500B5D25DE9E5E00A3D356 /* ApiRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1500B5C25DE9E5E00A3D356 /* ApiRepositoryTests.swift */; };
@@ -63,6 +64,7 @@
 		C10C3BC425D6E9BA0097031A /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		C10C3BC825D6EB050097031A /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
 		C10C3BCB25D6EB0E0097031A /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
+		C11737D925EC9AA3001964B4 /* AsynchronousOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynchronousOperation.swift; sourceTree = "<group>"; };
 		C122D23325DEB02C007C50D0 /* ApiRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRepositoryMock.swift; sourceTree = "<group>"; };
 		C1500B4725DE9AE200A3D356 /* POCNetworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = POCNetworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1500B4B25DE9AE200A3D356 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				C162B79225E2FDB60040B4C8 /* Completions.swift */,
+				C11737D925EC9AA3001964B4 /* AsynchronousOperation.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C10C3BA225D6E7920097031A /* ViewController.swift in Sources */,
+				C11737DA25EC9AA3001964B4 /* AsynchronousOperation.swift in Sources */,
 				C10C3BBA25D6E97D0097031A /* ApiRepository.swift in Sources */,
 				C162B79325E2FDB60040B4C8 /* Completions.swift in Sources */,
 				C10C3BC025D6E9930097031A /* ApiOperation.swift in Sources */,

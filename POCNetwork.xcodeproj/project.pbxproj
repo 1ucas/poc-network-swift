@@ -31,6 +31,9 @@
 		C162B79325E2FDB60040B4C8 /* Completions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C162B79225E2FDB60040B4C8 /* Completions.swift */; };
 		C162B7A325E318560040B4C8 /* ApiMockServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C162B7A225E318560040B4C8 /* ApiMockServer.swift */; };
 		C162B7BA25E3280B0040B4C8 /* ApiHolidayOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C162B7B925E3280B0040B4C8 /* ApiHolidayOperation.swift */; };
+		C1E4BD4825F01C3800B419B3 /* ApiServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E4BD4725F01C3800B419B3 /* ApiServiceManager.swift */; };
+		C1E4BD4F25F01E4600B419B3 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E4BD4E25F01E4600B419B3 /* Helper.swift */; };
+		C1E4BD5825F0257100B419B3 /* ApiServiceManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E4BD5725F0257100B419B3 /* ApiServiceManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +78,9 @@
 		C162B79225E2FDB60040B4C8 /* Completions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Completions.swift; sourceTree = "<group>"; };
 		C162B7A225E318560040B4C8 /* ApiMockServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiMockServer.swift; sourceTree = "<group>"; };
 		C162B7B925E3280B0040B4C8 /* ApiHolidayOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHolidayOperation.swift; sourceTree = "<group>"; };
+		C1E4BD4725F01C3800B419B3 /* ApiServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceManager.swift; sourceTree = "<group>"; };
+		C1E4BD4E25F01E4600B419B3 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		C1E4BD5725F0257100B419B3 /* ApiServiceManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceManagerTests.swift; sourceTree = "<group>"; };
 		C5A82AB0283388AB3D1F4685 /* Pods_POCNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_POCNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -145,6 +151,7 @@
 				C10C3BC225D6E99D0097031A /* DAL */,
 				C10C3BB425D6E94F0097031A /* Manager */,
 				C10C3BB325D6E9400097031A /* Service */,
+				C1E4BD4B25F01DDD00B419B3 /* ServiceManager */,
 				C162B79A25E3106F0040B4C8 /* UI */,
 				C162B79B25E3107F0040B4C8 /* App */,
 			);
@@ -205,6 +212,7 @@
 			children = (
 				C1500B5625DE9E5200A3D356 /* ApiServiceTests.swift */,
 				C1500B5C25DE9E5E00A3D356 /* ApiRepositoryTests.swift */,
+				C1E4BD5725F0257100B419B3 /* ApiServiceManagerTests.swift */,
 			);
 			path = ServiceTests;
 			sourceTree = "<group>";
@@ -223,6 +231,7 @@
 			children = (
 				C162B79225E2FDB60040B4C8 /* Completions.swift */,
 				C11737D925EC9AA3001964B4 /* AsynchronousOperation.swift */,
+				C1E4BD4E25F01E4600B419B3 /* Helper.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -246,6 +255,14 @@
 				C10C3BAB25D6E7930097031A /* Info.plist */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		C1E4BD4B25F01DDD00B419B3 /* ServiceManager */ = {
+			isa = PBXGroup;
+			children = (
+				C1E4BD4725F01C3800B419B3 /* ApiServiceManager.swift */,
+			);
+			path = ServiceManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -417,6 +434,7 @@
 			files = (
 				C10C3BA225D6E7920097031A /* ViewController.swift in Sources */,
 				C11737DA25EC9AA3001964B4 /* AsynchronousOperation.swift in Sources */,
+				C1E4BD4F25F01E4600B419B3 /* Helper.swift in Sources */,
 				C10C3BBA25D6E97D0097031A /* ApiRepository.swift in Sources */,
 				C162B79325E2FDB60040B4C8 /* Completions.swift in Sources */,
 				C10C3BC025D6E9930097031A /* ApiOperation.swift in Sources */,
@@ -425,6 +443,7 @@
 				C10C3B9E25D6E7920097031A /* AppDelegate.swift in Sources */,
 				C10C3BC925D6EB050097031A /* ApiRequest.swift in Sources */,
 				C10C3BB625D6E96D0097031A /* ApiService.swift in Sources */,
+				C1E4BD4825F01C3800B419B3 /* ApiServiceManager.swift in Sources */,
 				C162B7BA25E3280B0040B4C8 /* ApiHolidayOperation.swift in Sources */,
 				C10C3BBD25D6E98A0097031A /* ApiManager.swift in Sources */,
 				C10C3BA025D6E7920097031A /* SceneDelegate.swift in Sources */,
@@ -437,6 +456,7 @@
 			files = (
 				C1500B5D25DE9E5E00A3D356 /* ApiRepositoryTests.swift in Sources */,
 				C1500B5725DE9E5200A3D356 /* ApiServiceTests.swift in Sources */,
+				C1E4BD5825F0257100B419B3 /* ApiServiceManagerTests.swift in Sources */,
 				C1500B6A25DE9EAB00A3D356 /* ApiOperationTests.swift in Sources */,
 				C162B7A325E318560040B4C8 /* ApiMockServer.swift in Sources */,
 				C122D23425DEB02C007C50D0 /* ApiRepositoryMock.swift in Sources */,

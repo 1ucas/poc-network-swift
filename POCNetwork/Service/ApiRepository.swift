@@ -16,9 +16,13 @@ class ApiRepository: ApiRepositoryProtocol {
     
     private let apiClient : ApiClient
     
+    
+    
+    
     init(apiClient: ApiClient = ApiClient()) {
         self.apiClient = apiClient
     }
+    
     
     func listBreweries(page: Int, completion: @escaping FetchBreweryCompletion) {
         self.apiClient.listBreweries(withPage: page) { response in
@@ -35,7 +39,7 @@ class ApiRepository: ApiRepositoryProtocol {
     func listHolidays(completion: @escaping FetchHolidaysCompletion){
         apiClient.listHolidays { response in
             NSLog("Repository - Holiday - Done")
-
+            
             do {
                 let result = try response()
                 completion(.success(result))

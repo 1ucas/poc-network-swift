@@ -56,3 +56,17 @@ open class AsynchronousOperation: Operation
         state = .finished
     }
 }
+
+open class AsynchronousBlockOperation : AsynchronousOperation {
+    
+    private let block: (@escaping ()->Void) -> Void
+    
+    init(_ block: @escaping (@escaping ()->Void) -> Void) {
+        self.block = block
+    }
+    
+    override open func main() {
+        block(finish)
+    }
+    
+}

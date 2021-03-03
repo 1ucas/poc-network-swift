@@ -18,7 +18,6 @@ class ApiHolidayOperation: AsynchronousOperation {
     }
     
     override func main() {
-        super.main()
         apiProvider.listHolidays { [self] response in
             NSLog("Operation - Holiday - Done")
             

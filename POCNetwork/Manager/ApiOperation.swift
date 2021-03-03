@@ -20,10 +20,8 @@ class ApiOperation: AsynchronousOperation {
     }
     
     override func main() {
-        super.main()
         apiProvider.listBreweries(withPage: page) { [self] response in
             NSLog("Operation - Brew - Done")
-            
             do {
                 let result = try response()
                 self.completion(.success(result))

@@ -33,12 +33,14 @@ typealias NetworkCompletion<T> = (() throws -> T) -> Void
 
 public struct ApiClient {
     
-    private static var session: URLSession {
+    private static var sessionConfig:URLSessionConfiguration {
         let config = URLSessionConfiguration.default
-        config.requestCachePolicy = .reloadIgnoringLocalCacheData
+        config.requestCachePolicy = .reloadIgnoringLocalAndRemoteCacheData
         config.urlCache = nil
-        return URLSession.init(configuration: config)
+        return config
     }
+    
+    private static let session = URLSession.init(configuration: ApiClient.sessionConfig)
     
     private let env: EnvEnum
     

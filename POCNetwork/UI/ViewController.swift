@@ -19,6 +19,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var lblTempoMedioOperation: UILabel!
     @IBOutlet weak var lblTempoTotalOperation: UILabel!
     
+    @IBOutlet weak var lblDiferencaTempo: UILabel!
+    
     
     // MARK: - Propriedades
 
@@ -40,47 +42,44 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
     
     // MARK: - Actions
 
     @IBAction func iniciarTesteOperation(_ sender: UIButton) {
-        startOperation = DispatchTime.now()
-        chamarOperation(selectedPage: 1)
+        chamarOperation(selectedPageOperation: 1)
     }
     
     @IBAction func iniciarTesteDireto(_ sender: Any) {
-        startDireto = DispatchTime.now()
-        chamarDireto(selectedPage: 1)
+        chamarDireto(selectedPageDireto: 1)
     }
     
     @IBAction func iniciarTesteCompleto(_ sender: UIButton) {
-        // FIXME: Leva em consideração tempo de enfileiramento dos dois lados
-        startOperation = DispatchTime.now()
-        chamarOperation(selectedPage: 1)
-        
-        startDireto = DispatchTime.now()
-        chamarDireto(selectedPage: 1)
+        DispatchQueue.main.async {
+            self.chamarOperation(selectedPageOperation: 1)
+        }
+        DispatchQueue.main.async {
+            self.chamarDireto(selectedPageDireto: 1)
+        }
     }
     
     // MARK: - Direto
     
-    private func chamarDireto(selectedPage: Int) {
-        ApiService().listBreweries(page: selectedPage) { _ in
-            NSLog("ViewController Done - Direto \(selectedPage)")
+    private func chamarDireto(selectedPageDireto: Int) {
+        self.startDireto = DispatchTime.now()
+        ApiService().listBreweries(page: selectedPageDireto) { _ in
+            self.endDireto = DispatchTime.now()
+            NSLog("ViewController Done - Direto \(selectedPageDireto)")
             self.somaChamadasDireto += 1
-            let novaPagina = selectedPage+1
-            if(novaPagina == self.numChamadas + 1) {
-                self.endDireto = DispatchTime.now()
-                self.calcularValores()
-            } else {
-                self.chamarDireto(selectedPage: novaPagina)
+            self.calcularValoresDireto()
+            if(selectedPageDireto < self.numChamadas) {
+                let novaPagina = selectedPageDireto + 1
+                self.chamarDireto(selectedPageDireto: novaPagina)
             }
         }
     }
     
-    private func calcularValores() {
+    private func calcularValoresDireto() {
         let nanoTime = endDireto.uptimeNanoseconds - startDireto.uptimeNanoseconds
         let tempoTotal = (Double(nanoTime) / 1_000_000_000)
         
@@ -98,16 +97,16 @@ class ViewController: UIViewController {
     
     // MARK: - Operation
     
-    private func chamarOperation(selectedPage: Int) {
-        ApiManager().listBreweries(page: selectedPage) { _ in
-            NSLog("ViewController Done - Operation \(selectedPage)")
+    private func chamarOperation(selectedPageOperation: Int) {
+        self.startOperation = DispatchTime.now()
+        ApiManager().listBreweries(page: selectedPageOperation) { _ in
+            self.endOperation = DispatchTime.now()
+            NSLog("ViewController Done - Operation \(selectedPageOperation)")
             self.somaChamadasOperation += 1
-            let novaPagina = selectedPage+1
-            if(novaPagina == self.numChamadas + 1) {
-                self.endOperation = DispatchTime.now()
-                self.calcularValoresOperation()
-            } else {
-                self.chamarOperation(selectedPage: novaPagina)
+            self.calcularValoresOperation()
+            if(selectedPageOperation < self.numChamadas) {
+                let novaPagina = selectedPageOperation + 1
+                self.chamarOperation(selectedPageOperation: novaPagina)
             }
         }
     }
@@ -124,6 +123,14 @@ class ViewController: UIViewController {
             self.lblChamadasOperation.text = "\(self.somaChamadasOperation)"
             self.lblTempoMedioOperation.text = String(format: "%.3f ms", tempoMedio)
             self.lblTempoTotalOperation.text = String(format: "%.3f s", self.somaTempoTotalOperation)
+            
+            if(self.somaTempoTotalDireto != 0.0) {
+                let tempoMedioDireto = self.somaTempoTotalDireto / Double(self.somaChamadasDireto)
+                let diferencaTempoMedio = tempoMedio - tempoMedioDireto
+                let sinal = diferencaTempoMedio > 0 ? "+" : ""
+                self.lblDiferencaTempo.text = String(format: "%@%.3f ms", sinal, diferencaTempoMedio)
+                self.lblDiferencaTempo.textColor = diferencaTempoMedio > 0 ? .red : .green
+            }
         }
     }
 }

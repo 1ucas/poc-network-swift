@@ -23,7 +23,6 @@ class ApiRepository: ApiRepositoryProtocol {
     func listBreweries(page: Int, completion: @escaping FetchBreweryCompletion) {
         self.apiClient.listBreweries(withPage: page) { response in
             NSLog("Repository - Brew - Done")
-            
             do {
                 let result = try response()
                 completion(.success(result))

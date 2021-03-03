@@ -17,21 +17,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CVA-pV-hps">
-                                <rect key="frame" x="93" y="544" width="228" height="57"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="26Q-rI-8HZ">
+                                <rect key="frame" x="107" y="552" width="200" height="50"/>
                                 <color key="backgroundColor" name="AccentColor"/>
-                                <state key="normal" title="INICIAR TESTE OPERATION">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="iniciarTesteOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tNS-LS-H7p"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="26Q-rI-8HZ">
-                                <rect key="frame" x="93" y="646" width="228" height="57"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="8Ud-K0-6OP"/>
+                                    <constraint firstAttribute="height" constant="50" id="poy-qo-JPv"/>
+                                </constraints>
                                 <state key="normal" title="INICIAR TESTE DIRETO">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -74,14 +66,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="000 ms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbm-IK-ojj">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.000 ms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbm-IK-ojj">
                                 <rect key="frame" x="182" y="307" width="81" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="000 ms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AxE-Ub-yRf">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.000 ms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AxE-Ub-yRf">
                                 <rect key="frame" x="182" y="331" width="81" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -144,25 +136,57 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dSA-fa-UBl">
-                                <rect key="frame" x="93" y="746" width="228" height="57"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dSA-fa-UBl">
+                                <rect key="frame" x="107" y="752" width="200" height="50"/>
                                 <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="ZzL-PI-pRh"/>
+                                    <constraint firstAttribute="height" constant="50" id="ewq-MD-VSK"/>
+                                </constraints>
                                 <state key="normal" title="INICIAR TESTE COMPLETO">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="iniciarTesteCompleto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mxo-sL-2Lg"/>
-                                    <action selector="iniciarTesteDireto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="olT-1R-pKT"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CVA-pV-hps">
+                                <rect key="frame" x="107" y="652" width="200" height="50"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="pbp-NU-92c"/>
+                                    <constraint firstAttribute="width" constant="200" id="s4k-v8-sOb"/>
+                                </constraints>
+                                <state key="normal" title="INICIAR TESTE OPERATION">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="iniciarTesteOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tNS-LS-H7p"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="+0. 000 ms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAc-tj-Pfm">
+                                <rect key="frame" x="271" y="331" width="94" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dSA-fa-UBl" secondAttribute="bottom" constant="60" id="0kl-UK-zKQ"/>
+                            <constraint firstItem="26Q-rI-8HZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2tn-i7-NYl"/>
+                            <constraint firstItem="CVA-pV-hps" firstAttribute="top" secondItem="26Q-rI-8HZ" secondAttribute="bottom" constant="50" id="KEq-gp-0A2"/>
+                            <constraint firstItem="dSA-fa-UBl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WGS-Xw-5pG"/>
+                            <constraint firstItem="dSA-fa-UBl" firstAttribute="top" secondItem="CVA-pV-hps" secondAttribute="bottom" constant="50" id="j92-2t-Tcs"/>
+                            <constraint firstItem="CVA-pV-hps" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yqb-DR-Ofr"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="lblChamadas" destination="55E-ds-PA7" id="m11-iu-5oe"/>
                         <outlet property="lblChamadasOperation" destination="4wA-y8-hdz" id="qcR-hp-o22"/>
+                        <outlet property="lblDiferencaTempo" destination="nAc-tj-Pfm" id="bcG-YK-DIk"/>
                         <outlet property="lblTempoMedio" destination="lbm-IK-ojj" id="xFL-1i-efd"/>
                         <outlet property="lblTempoMedioOperation" destination="AxE-Ub-yRf" id="4jL-8k-pC1"/>
                         <outlet property="lblTempoTotal" destination="bFJ-m7-J7j" id="LXS-kh-XZT"/>

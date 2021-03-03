@@ -54,6 +54,29 @@ class ApiServiceTests: XCTestCase {
         }
     }
     
+//    func testeSucessoBrewsHolidaysComOperation() {
+//        // GIVEN
+//        let serviceExpectation = XCTestExpectation(description: "Chamada de serviço teste server")
+//        repo = ApiRepositoryMock(mockStateBrew: .sucessTwo, mockStateHoliday: .sucessTwo)
+//        service = ApiService(repository: repo)
+//        
+//        // WHEN
+//        service.listBreweriesAndHolidaysWithOperation(page: 1) { response in
+//            
+//            // THEN
+//            switch response {
+//            case .success(let model):
+//                XCTAssertEqual(model.breweryList.count, 2)
+//                XCTAssertEqual(model.holidayList.count, 2)
+//            case .failure(_):
+//                XCTFail("Deveria retornar duas listas não vazias")
+//            }
+//            serviceExpectation.fulfill()
+//        }
+//        wait(for: [serviceExpectation], timeout: 15.0)
+//
+//    }
+    
     func testeSucessoBrewsHolidaysListaVazia() {
         // GIVEN
         repo = ApiRepositoryMock(mockStateBrew: .emptyList, mockStateHoliday: .emptyList)

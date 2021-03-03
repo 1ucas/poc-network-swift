@@ -6,10 +6,13 @@
 //
 
 import Foundation
+import os.log
 
 class ApiManager: OperationQueue {
     
     private let apiProvider: ApiClient?
+    private static let pointsOfInterest = OSLog(subsystem: "ManagerPOI", category: .pointsOfInterest)
+    private let id = OSSignpostID(log: ApiManager.pointsOfInterest)
     
     init(apiClient: ApiClient? = nil) {
         self.apiProvider = apiClient
@@ -48,8 +51,11 @@ class ApiManager: OperationQueue {
     }
     
     func listBreweries(page: Int, completion: @escaping FetchBreweryCompletion) {
+        os_signpost(.begin, log: ApiManager.pointsOfInterest, name: "OPE CALL", signpostID: id)
+        
         addOperation(
             ApiOperation(page: page, apiClient: self.apiProvider) { result in
+                os_signpost(.end, log: ApiManager.pointsOfInterest, name: "OPE CALL", signpostID: self.id)
                 NSLog("Manager - Brew - Done")
                 completion(result)
             }

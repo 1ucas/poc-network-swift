@@ -35,7 +35,7 @@ open class AsynchronousOperation: Operation
             didChangeValue(forKey: o.keyPath)
         }
     }
-    
+        
     override open func start()
     {
         if self.isCancelled
@@ -48,19 +48,7 @@ open class AsynchronousOperation: Operation
             main()
         }
     }
-    
-    override open func main()
-    {
-        if self.isCancelled
-        {
-            state = .finished
-        }
-        else
-        {
-            state = .executing
-        }
-    }
-    
+        
     public func finish()
     {
         guard state != .finished else { return }

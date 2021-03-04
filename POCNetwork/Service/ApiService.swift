@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ApiService : InstrumentsServiceLogger {
+class ApiService : InstrumentsServiceLogger, ApiServiceProtocol {
     
     private let repository: ApiRepositoryProtocol
     
@@ -53,4 +53,8 @@ class ApiService : InstrumentsServiceLogger {
             }
         }
     }
+}
+
+protocol ApiServiceProtocol {
+    func listBreweries(page: Int, completion: @escaping FetchBreweryCompletion)
 }

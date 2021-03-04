@@ -22,6 +22,9 @@
 		C10C3BC525D6E9BA0097031A /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C3BC425D6E9BA0097031A /* ApiClient.swift */; };
 		C10C3BC925D6EB050097031A /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C3BC825D6EB050097031A /* ApiRequest.swift */; };
 		C10C3BCC25D6EB0E0097031A /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C3BCB25D6EB0E0097031A /* ApiResponse.swift */; };
+		C10CA69625F0717300D0CB9E /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10CA69525F0717300D0CB9E /* ViewModel.swift */; };
+		C10CA6B125F07A0A00D0CB9E /* ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10CA6B025F07A0A00D0CB9E /* ViewModelTests.swift */; };
+		C10CA6BC25F07BE000D0CB9E /* ApiServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10CA6BB25F07BE000D0CB9E /* ApiServiceMock.swift */; };
 		C11737DA25EC9AA3001964B4 /* AsynchronousOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11737D925EC9AA3001964B4 /* AsynchronousOperation.swift */; };
 		C122D23425DEB02C007C50D0 /* ApiRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C122D23325DEB02C007C50D0 /* ApiRepositoryMock.swift */; };
 		C1500B5725DE9E5200A3D356 /* ApiServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1500B5625DE9E5200A3D356 /* ApiServiceTests.swift */; };
@@ -67,6 +70,9 @@
 		C10C3BC425D6E9BA0097031A /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		C10C3BC825D6EB050097031A /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
 		C10C3BCB25D6EB0E0097031A /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
+		C10CA69525F0717300D0CB9E /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		C10CA6B025F07A0A00D0CB9E /* ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
+		C10CA6BB25F07BE000D0CB9E /* ApiServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceMock.swift; sourceTree = "<group>"; };
 		C11737D925EC9AA3001964B4 /* AsynchronousOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynchronousOperation.swift; sourceTree = "<group>"; };
 		C122D23325DEB02C007C50D0 /* ApiRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRepositoryMock.swift; sourceTree = "<group>"; };
 		C1500B4725DE9AE200A3D356 /* POCNetworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = POCNetworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -187,9 +193,18 @@
 			path = DAL;
 			sourceTree = "<group>";
 		};
+		C10CA6AF25F079DC00D0CB9E /* ViewModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				C10CA6B025F07A0A00D0CB9E /* ViewModelTests.swift */,
+			);
+			path = ViewModelTests;
+			sourceTree = "<group>";
+		};
 		C122D23225DEB017007C50D0 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				C10CA6BB25F07BE000D0CB9E /* ApiServiceMock.swift */,
 				C122D23325DEB02C007C50D0 /* ApiRepositoryMock.swift */,
 				C162B7A225E318560040B4C8 /* ApiMockServer.swift */,
 			);
@@ -200,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				C122D23225DEB017007C50D0 /* Mocks */,
+				C10CA6AF25F079DC00D0CB9E /* ViewModelTests */,
 				C1500B5425DE9E1C00A3D356 /* ManagerTests */,
 				C1500B5325DE9DFF00A3D356 /* ServiceTests */,
 				C1500B4B25DE9AE200A3D356 /* Info.plist */,
@@ -239,8 +255,9 @@
 		C162B79A25E3106F0040B4C8 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				C10C3BA125D6E7920097031A /* ViewController.swift */,
 				C10C3BA325D6E7920097031A /* Main.storyboard */,
+				C10C3BA125D6E7920097031A /* ViewController.swift */,
+				C10CA69525F0717300D0CB9E /* ViewModel.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -438,6 +455,7 @@
 				C10C3BBA25D6E97D0097031A /* ApiRepository.swift in Sources */,
 				C162B79325E2FDB60040B4C8 /* Completions.swift in Sources */,
 				C10C3BC025D6E9930097031A /* ApiOperation.swift in Sources */,
+				C10CA69625F0717300D0CB9E /* ViewModel.swift in Sources */,
 				C10C3BCC25D6EB0E0097031A /* ApiResponse.swift in Sources */,
 				C10C3BC525D6E9BA0097031A /* ApiClient.swift in Sources */,
 				C10C3B9E25D6E7920097031A /* AppDelegate.swift in Sources */,
@@ -457,9 +475,11 @@
 				C1500B5D25DE9E5E00A3D356 /* ApiRepositoryTests.swift in Sources */,
 				C1500B5725DE9E5200A3D356 /* ApiServiceTests.swift in Sources */,
 				C1E4BD5825F0257100B419B3 /* ApiServiceManagerTests.swift in Sources */,
+				C10CA6BC25F07BE000D0CB9E /* ApiServiceMock.swift in Sources */,
 				C1500B6A25DE9EAB00A3D356 /* ApiOperationTests.swift in Sources */,
 				C162B7A325E318560040B4C8 /* ApiMockServer.swift in Sources */,
 				C122D23425DEB02C007C50D0 /* ApiRepositoryMock.swift in Sources */,
+				C10CA6B125F07A0A00D0CB9E /* ViewModelTests.swift in Sources */,
 				C1500B6E25DE9EF600A3D356 /* ApiManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

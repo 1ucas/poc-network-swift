@@ -37,6 +37,9 @@ class ViewController: UIViewController {
     
     var somaChamadasOperation = 0
     var somaTempoTotalOperation = 0.0
+    
+    private let viewModelDireto = ViewModelDireto()
+    private let viewModelOperation = ViewModelOperation()
 
     // MARK: - ViewController
 
@@ -67,7 +70,7 @@ class ViewController: UIViewController {
     
     private func chamarDireto(selectedPageDireto: Int) {
         self.startDireto = DispatchTime.now()
-        ApiService().listBreweries(page: selectedPageDireto) { _ in
+        viewModelDireto.listBreweries(page: selectedPageDireto) { _ in
             self.endDireto = DispatchTime.now()
             NSLog("ViewController Done - Direto \(selectedPageDireto)")
             self.somaChamadasDireto += 1
@@ -99,7 +102,7 @@ class ViewController: UIViewController {
     
     private func chamarOperation(selectedPageOperation: Int) {
         self.startOperation = DispatchTime.now()
-        ApiManager().listBreweries(page: selectedPageOperation) { _ in
+        viewModelOperation.listBreweries(page: selectedPageOperation) { _ in
             self.endOperation = DispatchTime.now()
             NSLog("ViewController Done - Operation \(selectedPageOperation)")
             self.somaChamadasOperation += 1
